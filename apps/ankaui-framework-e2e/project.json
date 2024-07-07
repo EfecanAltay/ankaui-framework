@@ -1,0 +1,10 @@
+{
+  "name": "ankaui-framework-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/ankaui-framework-e2e/src",
+  "tags": [],
+  "implicitDependencies": ["ankaui-framework"],
+  "// targets": "to see all targets run: nx show project ankaui-framework-e2e --web",
+  "targets": {}
+}
