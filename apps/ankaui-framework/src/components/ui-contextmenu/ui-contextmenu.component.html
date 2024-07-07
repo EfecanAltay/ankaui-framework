@@ -1,0 +1,5 @@
+<div id="menu" class="list-group">
+  @for (contextActionData of MenuList; track $index) {
+    <a href="#" class="list-group-item list-group-item-action" (click)="MenuAction(contextActionData)">{{contextActionData.ActionName}}</a>
+  }
+</div>

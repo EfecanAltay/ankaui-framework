@@ -1,11 +1,11 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { UIButtonComponent } from "../components/ui-button/ui-button.component";
 
 @Component({
-  selector: 'app-nx-welcome',
-  standalone: true,
-  imports: [CommonModule],
-  template: `
+    selector: 'app-nx-welcome',
+    standalone: true,
+    template: `
     <!--
      * * * * * * * * * * * * * * * * * * * * * * * * * * * *
      This is a starter component and can be deleted.
@@ -433,6 +433,7 @@ import { CommonModule } from '@angular/common';
           <h1>
             <span> Hello there, </span>
             Welcome ankaui-framework 👋
+            <ui-button Title="Hello There"></ui-button>
           </h1>
         </div>
         <!--  HERO  -->
@@ -901,7 +902,8 @@ nx affected:e2e</pre>
       </div>
     </div>
   `,
-  styles: [],
-  encapsulation: ViewEncapsulation.None,
+    styles: [],
+    encapsulation: ViewEncapsulation.None,
+    imports: [CommonModule, UIButtonComponent]
 })
 export class NxWelcomeComponent {}

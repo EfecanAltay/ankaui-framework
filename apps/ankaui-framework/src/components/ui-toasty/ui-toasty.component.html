@@ -1,0 +1,24 @@
+<div style="position: fixed; right: 0px; bottom: 0px; background-color: transparent; overflow-y: inherit;">
+    @for (toast of this._srvToasty.toasts; track toast) {
+            <ngb-toast
+            style="margin: 10px;"
+            [style.backgroundColor]="toast.color"
+            [header]="toast.header"
+            [autohide]="true" 
+            [delay]="toast.delay || 5000"
+            (hidden)="this._srvToasty.remove(toast)">
+            @if(toast.body.split('\n').length > 1)
+            {
+                <ul>
+                    @for(content of toast.body.split('\n');  track content)
+                    {
+                        <li>{{content}}</li>
+                    }
+                </ul>
+            }
+            @else{
+                {{toast.body}}
+            }
+        </ngb-toast>
+    }
+</div>

@@ -1,0 +1,124 @@
+.item-root{
+  cursor: pointer;
+  border: 2px solid transparent;
+  opacity: 1;
+  padding: 0px;
+}
+
+.selected-file{
+  border: 2px solid #FFCA2C;
+  color: #212529;
+  background-color: #FFCA2C;
+  border-radius: 0px;
+}
+
+.selected-folder{
+  border: 2px solid #FFCA2C;
+  border-radius: 6px;
+}
+
+.hover-file{
+  border: 2px solid #0d6efd;
+  border-radius: 0px;
+}
+
+.hover-folder{
+  border: 2px solid white;
+  border-radius: 6px;
+}
+
+.dragging-file{
+  border-radius: 0px;
+  border: 2px solid transparent;
+  opacity: 0.2;
+}
+
+.dragging-folder{
+  border: 2px solid transparent;
+  opacity: 0.2;
+  padding: 2px;
+}
+
+.dropping-bottom{
+  border: 2px solid transparent;
+  border-bottom: 2px solid #0d6efd;
+}
+
+.dropping-top{
+  border: 2px solid transparent;
+  border-top: 2px solid #0d6efd;
+}
+
+.dropping-folder{
+  border-radius: 6px;
+  border: 3px solid #0d6efd;
+  padding: 0px;
+}
+
+.dropping-opennigfolder{
+  border-radius: 6px;
+  border: 2px solid white;
+}
+
+.nav-file-item
+{
+  padding: 10px;
+  border: 1px solid transparent;
+   -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+     -moz-user-select: none; /* Old versions of Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+          user-select: none; /* Non-prefixed version, currently
+                                supported by Chrome, Edge, Opera and Firefox */
+
+}
+
+.nav-folder-item
+{
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid transparent;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+     -moz-user-select: none; /* Old versions of Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+          user-select: none; /* Non-prefixed version, currently
+                                supported by Chrome, Edge, Opera and Firefox */
+}
+
+.nav-folder-item:focus {
+  background-color: Aqua;
+}
+
+.dropping-opennigfolder-navItem{
+  border-radius: 6px;
+  border-bottom: 2px solid #0d6efd;
+}
+
+.addButton{
+  color: white;
+  float: right;
+  border-radius: 6px;
+  padding: 3px;
+  margin: -3px;
+}
+
+.addButton:hover{
+  margin: -3px;
+}
+
+.addButton:active{
+  color: #FFCA2C;
+  margin: -3px;
+}
+
+.contextMenu{
+  position: relative;
+  margin-left: 10px;
+  left: 50px;
+  display: block;
+  height: 0px;
+  z-index: 999;
+}

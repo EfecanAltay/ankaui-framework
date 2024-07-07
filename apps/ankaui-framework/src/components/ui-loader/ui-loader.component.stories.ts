@@ -1,18 +1,23 @@
 import type { Meta, StoryObj } from '@storybook/angular';
-import { NxWelcomeComponent } from './nx-welcome.component';
+import { UILoaderComponent } from './ui-loader.component';
 
 import { within } from '@storybook/testing-library';
 import { expect } from '@storybook/jest';
 
-const meta: Meta<NxWelcomeComponent> = {
-  component: NxWelcomeComponent,
-  title: 'NxWelcomeComponent',
+const meta: Meta<UILoaderComponent> = {
+  component: UILoaderComponent,
+  title: 'UILoader',
 };
 export default meta;
-type Story = StoryObj<NxWelcomeComponent>;
+type Story = StoryObj<UILoaderComponent>;
 
 export const Primary: Story = {
-  args: {},
+  args: {
+    IsShowing : true,
+    ShowingText : "Lütfen Bekleyiniz..."
+  },
+  argTypes :{
+  }
 };
 
 export const Heading: Story = {

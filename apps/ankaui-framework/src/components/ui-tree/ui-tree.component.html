@@ -1,0 +1,21 @@
+<div class="d-flex flex-column flex-shrink-0 p-2 text-white"
+    style="background-color: transparent;  width: 100%; overflow-y: hidden;">
+    <!-- <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+        <svg class="bi me-2" width="40" height="32">
+            <use xlink:href="#bootstrap"></use>
+        </svg>
+        <span class="fs-4">AnkaAPI</span>
+    </a> -->
+    <!-- <hr> -->
+    <div class="draggingItem" uiDraggingHandleItem></div>
+
+        <ul id="root-list" class="nav nav-pills flex-column mb-auto" style="height: 100%;">
+                @for (item of ItemList; track $index) {
+                    <li style="margin-bottom: 10px;">
+                        <ui-tree-item [Root]="this" [Data]="item" [ItemType]="item.ItemType" [FileType]="item.FileType" [Name]="item.Name"
+                        [Selectable]="item.Selectable" (OnSelectedEvent)="OnSelected($event)" [(IsFolderOpen)]="item.IsFolderOpen"
+                        (OnFolderOpenChange)="OnFolderOpenChange($event)" [ChildrenItemData]="item.Children" ></ui-tree-item>
+                    </li>
+                }  
+        </ul>
+</div>

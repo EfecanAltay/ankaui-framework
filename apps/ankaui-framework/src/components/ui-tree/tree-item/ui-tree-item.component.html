@@ -1,0 +1,77 @@
+<div uiDraggingItem [UIItem]="this" [Data]="Data" [draggable]="Data.ItemType === 1"
+    [style.marginLeft.px]="ItemType === UITreeItemType.Folder ? 10 : 0"
+    (SelectionChangedCallback)="OnItemSelected($event)" (ClickedItemCallback)="OnItemClicked()" class="item-root">
+    @switch (ItemType) {
+    @case (UITreeItemType.Folder) {
+    <div [ngClass]="['nav-folder-item']" [style.backgroundColor]="FillColor()"
+        [style.borderRadius.px]="ParentId ? '0' : '5'"
+        [style.borderBottomLeftRadius.px]="IsFolderOpen || ParentId  ? '0' : '5'"
+        [style.borderBottomRightRadius.px]="IsFolderOpen || ParentId? '0' : '5'" style="cursor: pointer;">
+        @if(IsFolderOpen){
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-folder"
+            viewBox="0 0 16 16">
+            <path
+                d="M.54 3.87.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3h3.982a2 2 0 0 1 1.992 2.181l-.637 7A2 2 0 0 1 13.174 14H2.826a2 2 0 0 1-1.991-1.819l-.637-7a2 2 0 0 1 .342-1.31zM2.19 4a1 1 0 0 0-.996 1.09l.637 7a1 1 0 0 0 .995.91h10.348a1 1 0 0 0 .995-.91l.637-7A1 1 0 0 0 13.81 4zm4.69-1.707A1 1 0 0 0 6.172 2H2.5a1 1 0 0 0-1 .981l.006.139q.323-.119.684-.12h5.396z" />
+        </svg>
+        }
+        @else {
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-folder-fill"
+            viewBox="0 0 16 16">
+            <path
+                d="M9.828 3h3.982a2 2 0 0 1 1.992 2.181l-.637 7A2 2 0 0 1 13.174 14H2.825a2 2 0 0 1-1.991-1.819l-.637-7a2 2 0 0 1 .342-1.31L.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3m-8.322.12q.322-.119.684-.12h5.396l-.707-.707A1 1 0 0 0 6.172 2H2.5a1 1 0 0 0-1 .981z" />
+        </svg>
+        }
+        {{Name}}
+        <div class="addButton" (click)="AddFileInFolder()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-file-earmark-plus" viewBox="0 0 16 16">
+                <path
+                    d="M8 6.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V11a.5.5 0 0 1-1 0V9.5H6a.5.5 0 0 1 0-1h1.5V7a.5.5 0 0 1 .5-.5" />
+                <path
+                    d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5z" />
+            </svg>
+        </div>
+    </div>
+    @if(IsFolderOpen){
+    <ul [id]="this.Data.Id" class="nav nav-pills flex-column mb-auto"
+        [style.backgroundColor]="ParentId ? '#ffffff1a' : '#141414'" style="height: 100%; 
+                border-bottom-left-radius: 10px;  
+                border-bottom-right-radius: 5px;">
+        @if(ChildrenItemData && ChildrenItemData.length > 0){
+        @for (ChildItem of ChildrenItemData; track $index) {
+        <li>
+            <ui-tree-item [Root]="this.Root" [ParentId]="this" [Data]="ChildItem" [ChildIndex]="ChildIndex+1"
+                [ItemType]="ChildItem.ItemType" [FileType]="ChildItem.FileType" [Name]="ChildItem.Name"
+                [Selectable]="ChildItem.Selectable" (OnSelectedEvent)="OnSelectedChildren($event)"
+                [IsSelected]="ChildItem && ChildItem.IsSelected" [ChildrenItemData]="ChildItem.Children"></ui-tree-item>
+        </li>
+        }
+        }
+    </ul>
+    }
+    }
+    @case (UITreeItemType.File) {
+    <div [ngClass]="['nav-file-item',IsSelected ? 'seleceted':'']" [style.marginLeft.px]="ChildIndex"
+        (click)="OnClickAction()">
+        @switch(ItemType){
+            @case (1) {
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-file-earmark-spreadsheet-fill" viewBox="0 0 16 16">
+                <path d="M6 12v-2h3v2z" />
+                <path
+                    d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0M9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1M3 9h10v1h-3v2h3v1h-3v2H9v-2H6v2H5v-2H3v-1h2v-2H3z" />
+            </svg>
+            }
+            @case (2) {
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-folder-fill"
+                viewBox="0 0 16 16">
+                <path
+                    d="M9.828 3h3.982a2 2 0 0 1 1.992 2.181l-.637 7A2 2 0 0 1 13.174 14H2.825a2 2 0 0 1-1.991-1.819l-.637-7a2 2 0 0 1 .342-1.31L.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3m-8.322.12q.322-.119.684-.12h5.396l-.707-.707A1 1 0 0 0 6.172 2H2.5a1 1 0 0 0-1 .981z" />
+            </svg>
+            }
+        }
+        {{Name}}
+    </div>
+    }
+    }
+</div>

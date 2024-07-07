@@ -1,0 +1,39 @@
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: stretch;
+}
+
+.sidebar-text-menu{
+    display: flex;
+    flex-direction: column;
+    flex-shrink: initial;
+    align-items: stretch;
+    align-self: stretch;
+    justify-self: center;
+    flex-grow: 1;
+    width: 200px;
+}
+
+.sidebar-icon-menu{
+    display: flex;
+    flex-direction: column;
+    flex-shrink: initial;
+    align-items: stretch;
+    align-self: stretch;
+    justify-self: center;
+    flex-grow: 1;
+    width: 80px;
+}
+
+.settings{
+    display: flex;
+    cursor: pointer;
+    flex-direction: column;
+    align-items: start;
+}
+
+.settings-icon{
+    
+}
