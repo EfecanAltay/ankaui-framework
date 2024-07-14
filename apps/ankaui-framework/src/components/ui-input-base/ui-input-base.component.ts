@@ -36,10 +36,10 @@ export class UIInputBaseComponent extends UIBaseComponent {
   protected autoComplate: "none" | "username" | "current-password" = "none";
 
   @Input()
-  public set Value(val: unknown) {
+  public set Value(val: string | null) {
     this.control.setValue(val);
   }
-  public get Value(): unknown {
+  public get Value(): string | null {
     return this.control.value;
   }
   @Output() ValueChange = new EventEmitter<unknown>;

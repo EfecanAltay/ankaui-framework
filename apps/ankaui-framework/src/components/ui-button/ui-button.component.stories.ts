@@ -14,7 +14,7 @@ type Story = StoryObj<UIButtonComponent>;
 export const Primary: Story = {
   args: {
     Title : 'Title',
-    IsDisabled : false,
+    IsDisable : false,
     IsLoading : false,
     IsLoadingText : 'Lütfen Bekleyin...',
     Name : 'Name',

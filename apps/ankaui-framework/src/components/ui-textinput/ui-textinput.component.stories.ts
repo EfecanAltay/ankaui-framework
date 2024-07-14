@@ -15,7 +15,7 @@ export const Primary: Story = {
   args: {
     Title : 'Text Input Title',
     PlaceHoder :'Please Enter Text...',
-    IsDisabled : false,
+    IsDisable : false,
     Name : 'Name',
     IsRequired : false,
     IsEnableValidMessage : true,

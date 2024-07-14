@@ -1,4 +1,4 @@
-<button [name]="Name" [type]="Type" [ngClass]="['btn',Style]"  [disabled]="IsDisabled" (click)="OnClick()">
+<button [name]="Name" [type]="Type" [ngClass]="['btn',Style]" (click)="OnClick()" [disabled]="IsDisable">
     @if(isLoading){
         <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
         <span role="status" style="margin-left: 5px;">{{IsLoadingText}}</span>

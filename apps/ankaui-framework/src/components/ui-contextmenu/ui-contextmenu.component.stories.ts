@@ -15,7 +15,7 @@ type Story = StoryObj<UIContextMenuComponent>;
 export const Primary: Story = {
   args: {
     Title : 'CheckBox',
-    IsDisabled : false,
+    IsDisable : false,
     Name : 'Name',
     MenuList : [] 
   },

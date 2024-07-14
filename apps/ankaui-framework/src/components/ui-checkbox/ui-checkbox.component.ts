@@ -11,11 +11,14 @@ import { ReactiveFormsModule } from '@angular/forms';
   styleUrl: './ui-checkbox.component.css',
 })
 export class UICheckboxComponent extends UIInputBaseComponent {
+  
+  
+  
   /**
    *
    */
   constructor() {
     super();
-    this.Value = false;
+    this.Value = "false";
   }
 }

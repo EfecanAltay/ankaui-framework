@@ -1,13 +1,24 @@
-import { AfterContentChecked, AfterViewChecked, AfterViewInit, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
 @Component({
   template: ''
 })
-export class UIBaseComponent {
+export class UIBaseComponent 
+{
 
+  private _isDisable = false;
   @Input()
-  public IsDisabled?:boolean;
+  public set IsDisable(val : boolean){
+    this._isDisable = val;
+    if(this._isDisable === true)
+      this.control.disable();
+    else if(this._isDisable === false)
+      this.control.enable();
+  }
+  public get IsDisable(): boolean{
+    return this._isDisable;
+  }
 
   @Input()
   public Name?:string;
@@ -18,11 +29,10 @@ export class UIBaseComponent {
   protected _defaultClassName = "form-control";
   public ClassName: string;
 
-  protected control: FormControl<unknown> = new FormControl<unknown>('');
-  public Control(): FormControl<unknown>{
+  protected control: FormControl<string | null> = new FormControl<string | null>("");
+  public Control(): FormControl<string | null>{
     return this.control;
   }
-
   /**
    *
    */

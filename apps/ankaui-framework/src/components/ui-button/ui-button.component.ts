@@ -16,7 +16,7 @@ export class UIButtonComponent extends UIBaseComponent {
   @Input()
   public set IsLoading(val:boolean){
     this.isLoading = val;
-    this.IsDisabled = !!val;
+    this.IsDisable = !!val;
   }
 
   public IsLoadingText?: string;

@@ -3,9 +3,9 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "start": "nx run ankaui-framework:serve:development",
+    "start": "nx run ankaui-framework:storybook",
     "build": "nx run ankapi:build:dev",
-    "storybook": "nx run ankaui-framework:storybook",
+    "site": "nx run ankaui-framework:serve:development",
     "create": "npx nx g @nx/angular:component login --directory libs/ankapi/login"
   },
   "private": true,

@@ -1,6 +1,6 @@
 <div class="form-check">
-    <input [name]="Name" [formControl]="control" class="form-check-input" type="checkbox" id="gridCheck">
-    <label class="form-check-label" for="gridCheck" novalidate>
+    <input class="form-check-input"  [formControl]="control" [name]="Name" type="checkbox" [value]="Value" id="gridCheck">
+    <label class="form-check-label" for="gridCheck" style="user-select:none" novalidate>
         {{Title}}
     </label>
 </div>

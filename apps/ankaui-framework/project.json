@@ -70,7 +70,9 @@
         "port": 4400,
         "configDir": "apps/ankaui-framework/.storybook",
         "browserTarget": "ankaui-framework:build",
-        "compodoc": false
+        "compodoc": false,
+        "styles": ["apps/ankaui-framework/src/styles.css",
+        "node_modules/bootstrap/dist/css/bootstrap.min.css"]
       },
       "configurations": {
         "ci": {

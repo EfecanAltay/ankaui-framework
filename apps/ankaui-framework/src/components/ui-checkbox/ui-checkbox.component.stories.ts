@@ -14,7 +14,7 @@ type Story = StoryObj<UICheckboxComponent>;
 export const Primary: Story = {
   args: {
     Title : 'CheckBox',
-    IsDisabled : false,
+    IsDisable : false,
     Name : 'Name',
     IsRequired : false,
     IsEnableValidMessage : true,
