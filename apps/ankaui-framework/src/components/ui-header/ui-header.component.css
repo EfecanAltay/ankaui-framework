@@ -6,3 +6,34 @@
     margin-top: 10px;
     top: 10px;
   }
+
+.header{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* d-flex text-white flex-start text-decoration-none */
+.header-logo{
+  display: flex;
+  margin: 0px auto;
+  text-decoration: none;
+  justify-content: flex-start;
+  min-width: 100px;
+  text-align: center;
+}
+
+.header-menu{
+  display: flex;
+  margin: 0px auto;
+  text-decoration: none;
+  justify-content:stretch;
+  align-content: center;
+  flex-grow: 1;
+}
+
+.login-buttons{
+  margin: 0px auto;
+  justify-self: stretch;
+}

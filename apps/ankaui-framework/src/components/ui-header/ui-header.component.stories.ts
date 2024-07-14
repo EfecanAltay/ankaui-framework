@@ -13,7 +13,8 @@ type Story = StoryObj<UIHeaderComponent>;
 
 export const Primary: Story = {
   args: {
-
+    IsSigned: false,
+    MenuButtonIsVisible : false,
   },
   argTypes :{
   }

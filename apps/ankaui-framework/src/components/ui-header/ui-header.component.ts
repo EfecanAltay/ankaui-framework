@@ -13,6 +13,7 @@ export class UIHeaderComponent {
 
   @Input()
   public UISidebar? : UISidebarComponent;
+  @Input()
   public IsSigned : boolean;
 
   @Input()
