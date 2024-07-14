@@ -21,9 +21,14 @@
             "input": "apps/ankaui-framework/public"
           }
         ],
-        "styles": ["apps/ankaui-framework/src/styles.css",
-         "node_modules/bootstrap/dist/css/bootstrap.min.css"],
-        "scripts": ["node_modules/bootstrap/dist/js/bootstrap.min.js"]
+        "styles": [
+          "apps/ankaui-framework/src/styles.css",
+          "node_modules/bootstrap/dist/css/bootstrap.min.css"
+        ],
+        "scripts": [
+          "node_modules/bootstrap/dist/js/bootstrap.min.js",
+          "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+        ]
       },
       "configurations": {
         "production": {
@@ -70,9 +75,7 @@
         "port": 4400,
         "configDir": "apps/ankaui-framework/.storybook",
         "browserTarget": "ankaui-framework:build",
-        "compodoc": false,
-        "styles": ["apps/ankaui-framework/src/styles.css",
-        "node_modules/bootstrap/dist/css/bootstrap.min.css"]
+        "compodoc": false
       },
       "configurations": {
         "ci": {

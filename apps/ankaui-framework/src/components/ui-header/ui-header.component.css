@@ -37,3 +37,22 @@
   margin: 0px auto;
   justify-self: stretch;
 }
+
+.header-profile{
+  margin: 0px auto;
+  justify-self: stretch;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.header-profile:hover{
+  background-color: black;
+}
+
+#profile-name{
+margin-right: 5px;
+line-height: 1.5;
+display: inline-block;
+vertical-align: middle;
+}
+
