@@ -13,18 +13,9 @@ type Story = StoryObj<UITabbedComponent>;
 
 export const Primary: Story = {
   args: {
-    Title : 'Tapped',
-    IsDisabled : false,
-    Name : 'Name',
-    IsRequired : false,
-    IsEnableValidMessage : true,
-    InValidText : 'Valid'
+  
   },
   argTypes :{
-    Type : {
-      options: ["none","button","submit"],
-      control: { type: 'select' },
-    },
   }
 };
 

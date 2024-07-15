@@ -1,1 +1,12 @@
-<p>ui-tabbed works!</p>
+<ul class="nav nav-tabs bg-dark" id="uiTab" role="tablist" style="height: 47px;">
+    @for (item of ItemDataList; track $index) {
+        <ui-tabbed-item [Data]="item" (OnCloseChange)="OnCloseAction($event)"></ui-tabbed-item>
+    }
+  </ul>
+  <div class="tab-content" id="myTabContent">
+    @for (item of ItemDataList; track $index) {
+        <div class="tab-pane fade show" id="home" role="tabpanel" aria-labelledby="home-tab">
+            {{item.Title}}
+        </div>
+    }
+  </div>

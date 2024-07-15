@@ -1,0 +1,35 @@
+#closeIcon{
+    margin-left: 20px;
+    margin-top: -3.2rem;
+    font-size: medium;
+    opacity: 0;
+}
+
+#closeIcon:hover{
+    opacity: 1;
+    color:red;
+}
+
+#contact-tab{
+    color:white;
+    margin: 2px ;
+    border-radius: 10px;
+}
+
+#contact-tab::after{
+    color:white;
+    margin-top: 0px;
+    border-left : 1px solid gray;
+    opacity: 0.1;
+}
+
+#contact-tab:hover{
+    background-color: rgb(56, 56, 56);
+    border-radius: 10px;
+}
+
+#contact-tab.active{
+    border : 1px solid gray;
+    border-radius: 10px;
+    background-color: rgb(56, 56, 56);
+}
