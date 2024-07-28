@@ -1,17 +1,15 @@
-
-<li class="nav-item" 
-    role="presentation"
-    draggable="true"
-    style="margin: 0px;"
+<li class="nav-item" role="presentation" 
+    style="margin: 0px;" 
     (mouseenter)="hoverItem($event)"
     (mouseleave)="hoverItem($event, true)">
     <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab"
         aria-controls="contact" aria-selected="false" style="padding-left: 0px; padding-right: 8px;">
         <div>
-            <span style="border-left: 1px solid rgba(255, 255, 255, 0.096);height: 60px;width: 0px;margin-right: 10px;"></span>
+            <span
+                style="border-left: 1px solid rgba(255, 255, 255, 0.096);height: 60px;width: 0px;margin-right: 10px;"></span>
             {{Data?.Title}}
             <i id="closeIcon" class="bi bi-x-square" (mouseenter)="hoverCloseIcon($event)"
-                (mouseleave)="hoverCloseIcon($event,true)" (click)="Close()" ></i>
+                (mouseleave)="hoverCloseIcon($event,true)" (click)="Close()"></i>
         </div>
     </button>
 </li>

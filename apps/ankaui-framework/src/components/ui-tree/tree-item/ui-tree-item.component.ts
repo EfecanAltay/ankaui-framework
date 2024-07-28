@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, EventEmitter, Input, OnInit, Output, Renderer2 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UITreeItemData, UITreeItemFileType, UITreeItemType } from './ui-tree-item.data';
 import { UITreeComponent } from '../ui-tree.component';
@@ -72,14 +72,18 @@ export class UITreeItemComponent implements OnInit {
 
   public DragItemEnteredSub?: Subscription;
 
-  constructor(private cd: ChangeDetectorRef) {
+  constructor(private cd: ChangeDetectorRef,
+      private el: ElementRef,
+      private renderer: Renderer2) {
     this.Name = "[NO NAME]";
     this.IsFolderOpen = false;
     this.ItemType = UITreeItemType.File;
     this.FileType = UITreeItemFileType.RESTAPI_GET;
     this.IsSelected = false;
     this.OnSelectedEvent = new EventEmitter<UITreeItemComponent>();
+    (el.nativeElement as HTMLElement).draggable = true;
   }
+
   ngOnInit(): void {
     if(this.ParentId)
       this.ChildIndex++;

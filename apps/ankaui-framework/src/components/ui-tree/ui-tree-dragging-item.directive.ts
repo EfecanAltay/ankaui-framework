@@ -171,7 +171,7 @@ export class DraggingItemDirective implements OnInit {
     });
   }
 
-  @HostListener('drop', ["$event"])
+  @HostListener('ondrop', ["$event"])
   onDropListenerLocal(event: DragEvent) {
     this.runwithCheckFolder(() => {
       this.drop(event);

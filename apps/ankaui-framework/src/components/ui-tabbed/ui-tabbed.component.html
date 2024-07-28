@@ -1,6 +1,11 @@
 <ul class="nav nav-tabs bg-dark" id="uiTab" role="tablist" style="height: 47px;">
     @for (item of ItemDataList; track $index) {
-        <ui-tabbed-item [Data]="item" (OnCloseChange)="OnCloseAction($event)"></ui-tabbed-item>
+        <ui-tabbed-item uiDraggingTabbedItem
+            [Parent]="this"
+            id="tabItem"
+            draggable="true"
+            [Data]="item" 
+            (OnCloseChange)="OnCloseAction($event)"></ui-tabbed-item>
     }
   </ul>
   <div class="tab-content" id="myTabContent">
