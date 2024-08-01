@@ -28,11 +28,12 @@ export class DraggingTabbedItemDirective {
   onDragEnterListenerLocal(event: DragEvent) {
     //event.preventDefault();
     if (event.dataTransfer && this.Data?.Id) {
+      //(event.currentTarget as HTMLElement).classList.add("draggingTabItem");
       event.dataTransfer.clearData();
       event.dataTransfer.effectAllowed = 'move';
       event.dataTransfer.dropEffect = 'move';
       DraggingTabbedItemDirective.draggingID = this.Data.Id;
-      event.dataTransfer?.setData('movingTabID', this.Data.Id); 
+      event.dataTransfer.setData('movingTabID', this.Data.Id); 
     }
   }
 
@@ -43,15 +44,15 @@ export class DraggingTabbedItemDirective {
     {
       if(this.Data?.Id !== DraggingTabbedItemDirective.draggingID){
         event.dataTransfer.clearData();
-        target.style.borderLeft = "2px solid transparent";
-        target.style.borderRight = "2px solid transparent";
+        target.style.borderLeft = "1px solid transparent";
+        target.style.borderRight = "1px solid transparent";
         const clientElement = target as HTMLElement;
         if (event.pageX > clientElement.offsetLeft + (clientElement.offsetWidth / 2)) {
-          target.style.borderRight = "2px solid red";
+          target.style.borderRight = "1px solid red";
           DraggingTabbedItemDirective.dragOverRight = true;
         }
         else {
-          target.style.borderLeft = "2px solid red";
+          target.style.borderLeft = "1px solid red";
           DraggingTabbedItemDirective.dragOverRight = false;
         }
       }
@@ -63,8 +64,9 @@ export class DraggingTabbedItemDirective {
   onDragLeaveListenerLocal(event: DragEvent) {
     const target = this.getTabItemElement(event);
     if(target){
-      target.style.borderLeft = "2px solid transparent";
-      target.style.borderRight = "2px solid transparent";
+      (event.currentTarget as HTMLElement).classList.remove("draggingTabItem");
+      target.style.borderLeft = "1px solid transparent";
+      target.style.borderRight = "1px solid transparent";
     }
   }
 

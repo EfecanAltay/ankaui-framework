@@ -1,4 +1,61 @@
-#tabItem{
-   border-right: 2px solid transparent;
-   border-left: 2px solid transparent;
+.tabBar{
+   flex-wrap: nowrap;
+   background-color: red;
+   height: 47px;
 }
+
+.tablist{
+   height: 47px;
+   font: optional;
+   overflow-x: auto;
+   scroll-snap-type: x mandatory;
+   overflow-y: hidden;
+   width: 100%;
+   flex-wrap: nowrap;
+   background-color: red;
+}
+
+#tabItem{
+   border-right: 1px solid transparent;
+   border-left: 1px solid transparent;
+   scroll-snap-align: center;
+   flex-wrap: nowrap;
+   min-block-size: 10;
+}
+
+#draggingTabItem{
+   width: 100px;
+   height: 100px;
+   background-color: red;
+   opacity: 1;
+}
+
+
+.tablist::-webkit-scrollbar {
+   display: none;
+ }
+ 
+ .tablist::-webkit-scrollbar-track {
+   display: none;
+ }
+ 
+ .tablist:-webkit-scrollbar-thumb {
+   display: none;
+} 
+
+#scrollButon{
+   display: none;
+}
+
+@media (max-width: 600px) {  
+   #scrollButon{
+      display: block;
+   }
+}
+
+/* @media screen and (o: 900px) {  
+   #scrollButon{
+      display: block;
+   }
+}
+  */

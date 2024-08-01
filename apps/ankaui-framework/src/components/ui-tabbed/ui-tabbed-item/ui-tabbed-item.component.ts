@@ -36,7 +36,7 @@ export class UITabbedItemComponent {
   }
 
   public hoverItem(event: MouseEvent, isExit = false) {
-    const el = (event.target as HTMLElement).children[0].children[0].children[1] as HTMLElement;
+    const el = (event.target as HTMLElement).children[0].children[0].children[2] as HTMLElement;
     if (el) {
       if (isExit)
         el.style.opacity = "0";

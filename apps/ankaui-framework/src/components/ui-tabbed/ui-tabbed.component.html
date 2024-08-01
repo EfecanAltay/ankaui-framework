@@ -1,17 +1,25 @@
-<ul class="nav nav-tabs bg-dark" id="uiTab" role="tablist" style="height: 47px;">
-    @for (item of ItemDataList; track $index) {
-        <ui-tabbed-item uiDraggingTabbedItem
-            [Parent]="this"
-            id="tabItem"
-            draggable="true"
-            [Data]="item" 
-            (OnCloseChange)="OnCloseAction($event)"></ui-tabbed-item>
-    }
-  </ul>
-  <div class="tab-content" id="myTabContent">
-    @for (item of ItemDataList; track $index) {
+
+    <ul id="tabBar" class="nav nav-tabs bg-dark tabBar" id="uiTab" role="tabBar">
+        <li id="scrollButon" style="flex:none;" (dragover)="OnDropScrollButton(false)">
+            <button type="button" (click)="ScrollAction(false)" style="height: 100%;"><i class="bi bi-caret-left"></i></button>
+        </li>
+        <li style="flex:auto; min-width: 10px;" (resize)="OnResize($event)">
+            <ul id="tablist" (scroll)="OnScrollTabList($event)"  class="nav nav-tabs bg-dark tablist" id="uiTab" role="tablist" dir="ltr">
+                @for (item of ItemDataList; track $index) {
+                <ui-tabbed-item uiDraggingTabbedItem [Parent]="this" id="tabItem" [Data]="item" 
+                    (OnCloseChange)="OnCloseAction($event)"></ui-tabbed-item>
+                }
+            </ul>
+        </li>
+        <li id="scrollButon" style="flex:none;">
+            <button type="button" (click)="ScrollAction(true)" (dragover)="OnDropScrollButton(true)" style="height: 100%;"><i class="bi bi-caret-right"></i></button>
+        </li>
+    </ul>
+    
+    <div class="tab-content" id="myTabContent">
+        @for (item of ItemDataList; track $index) {
         <div class="tab-pane fade show" id="home" role="tabpanel" aria-labelledby="home-tab">
             {{item.Title}}
         </div>
-    }
-  </div>
+        }
+    </div>
