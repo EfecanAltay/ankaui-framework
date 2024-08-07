@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener, OnInit, Renderer2 } from '@angular/core';
+import { Component, ElementRef, EventEmitter, HostListener, OnInit, Output, Renderer2 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UIButtonComponent } from "../ui-button/ui-button.component";
 import { UITabbedItemComponent } from "./ui-tabbed-item/ui-tabbed-item.component";
@@ -21,6 +21,8 @@ export class UITabbedComponent implements OnInit {
 
   public ItemDataList: UITabbedItemData[] = [];
 
+  @Output()
+  public OnSelectedChange: EventEmitter<UITabbedItemData> = new EventEmitter<UITabbedItemData>();
 
   /**
    *
@@ -35,8 +37,6 @@ export class UITabbedComponent implements OnInit {
     this.AddNewTab("Tab 3");
     this.AddNewTab("Tab 4");
     this.AddNewTab("Tab 5");
-
-    const element = document.getElementById("scrolltabs");
   }
 
   public Scrolling(data: any) {
@@ -54,6 +54,12 @@ export class UITabbedComponent implements OnInit {
   public OnCloseAction(data: UITabbedItemData) {
     this.RemoveTab(data.Id);
   }
+
+  public OnSelectedTabAction(data: UITabbedItemData) {
+    this.selectItemFixed(data);
+    this.OnSelectedChange.emit(data);
+  }
+
 
   public ScrollAction(isRight: boolean = true) {
     if(isRight === true)
@@ -91,8 +97,10 @@ export class UITabbedComponent implements OnInit {
   public MoveTab(from: UUID, to: UUID, isRight: boolean) {
     const fromItem = this.ItemDataList.find(x => x.Id === from);
     const toIndex = this.ItemDataList.findIndex(x => x.Id === to);
-    if (fromItem)
+    if (fromItem){
       this.ItemDataList = this.moveItem(fromItem, toIndex, isRight);
+    }
+  
   }
 
   private moveItem(item: UITabbedItemData, toIndex: number, isDown: boolean) { // assign the removed item as an array
@@ -103,6 +111,13 @@ export class UITabbedComponent implements OnInit {
     const n_arr2 = this.ItemDataList.slice(toIndex, this.ItemDataList.length).filter(x => x.Id !== item.Id);
     n_arr.push(...n_arr2);
     return n_arr;
+  }
+
+  private selectItemFixed(item: UITabbedItemData) { // assign the removed item as an array
+    this.ItemDataList.forEach(x=> {
+        if(x.Id !== item.Id && x.Selected)
+          x.Selected = false;
+    });
   }
 
   public OnScrollTabList(data: Event){

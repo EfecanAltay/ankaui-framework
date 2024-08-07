@@ -6,6 +6,8 @@ export class UITabbedItemData {
   public ItemType: UITabbedItemType;
   public FileType: UITabbedItemFileType;
 
+  public Selected = false;
+
   constructor(title = "[No Name]") {
     this.Title = title;
     this.Id = self.crypto.randomUUID();

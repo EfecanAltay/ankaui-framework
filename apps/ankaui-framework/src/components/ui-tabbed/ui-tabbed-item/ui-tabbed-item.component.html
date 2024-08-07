@@ -2,10 +2,13 @@
     role="presentation"  
     (mouseenter)="hoverItem($event)"
     (mouseleave)="hoverItem($event, true)">
-    <button class="nav-link" id="contact-tab"  draggable="true" data-bs-toggle="tab" 
-    data-bs-target="#contact"
-     type="button" role="tab"
-        aria-controls="contact" aria-selected="false" 
+    <button class="nav-link"
+        id="contact-tab"
+        draggable="true" 
+        type="button"
+        role="tab"
+        [class.active]="Data.Selected"
+        (click)="Selected()"
         style="padding-left: 0px; margin-top: 2px;">
         <div style="white-space: nowrap;display: flex;flex-wrap: nowrap;">
             <span style="border-left: 1px solid rgba(255, 255, 255, 0.096);height: 60px;width: 0px; margin-right: 8px;float: right;"></span>

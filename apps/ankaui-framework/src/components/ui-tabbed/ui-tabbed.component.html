@@ -1,12 +1,18 @@
 
-    <ul id="tabBar" class="nav nav-tabs bg-dark tabBar" id="uiTab" role="tabBar">
+    <ul id="tabBar" class="nav bg-dark tabBar" id="uiTab" role="tablist">
         <li id="scrollButon" style="flex:none;" (dragover)="OnDropScrollButton(false)">
             <button type="button" (click)="ScrollAction(false)" style="height: 100%;"><i class="bi bi-caret-left"></i></button>
         </li>
         <li style="flex:auto; min-width: 10px;" (resize)="OnResize($event)">
-            <ul id="tablist" (scroll)="OnScrollTabList($event)"  class="nav nav-tabs bg-dark tablist" id="uiTab" role="tablist" dir="ltr">
+            <ul id="tablist" (scroll)="OnScrollTabList($event)" 
+                class="nav nav-tabs bg-dark tablist" 
+                id="uiTab" dir="ltr">
                 @for (item of ItemDataList; track $index) {
-                <ui-tabbed-item uiDraggingTabbedItem [Parent]="this" id="tabItem" [Data]="item" 
+                <ui-tabbed-item uiDraggingTabbedItem 
+                    [Parent]="this" 
+                    id="tabItem" 
+                    [(Data)]="item" 
+                    (OnSelectedChange)="OnSelectedTabAction($event)"
                     (OnCloseChange)="OnCloseAction($event)"></ui-tabbed-item>
                 }
             </ul>

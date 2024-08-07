@@ -17,7 +17,17 @@ export class UITabbedItemComponent {
   public Parent?: UITabbedComponent;
 
   @Input()
-  public Data?: UITabbedItemData;
+  public Data: UITabbedItemData = new UITabbedItemData();
+
+  private _selectedTab = false;
+  public get SelectedTab(): boolean{
+    return this._selectedTab;
+  }
+  public set SelectedTab(val : boolean){
+    this._selectedTab = val;
+    this.Data.Selected = val;
+    console.log(val)
+  }
 
   public UITreeItemType = UITreeItemType;
 
@@ -29,6 +39,8 @@ export class UITabbedItemComponent {
   @Output()
   public OnSelectedChange: EventEmitter<UITabbedItemData> = new EventEmitter<UITabbedItemData>();
 
+  @Output()
+  public DataChange: EventEmitter<UITabbedItemData> = new EventEmitter<UITabbedItemData>();
 
   public DragItemEnteredSub?: Subscription;
 
@@ -57,6 +69,7 @@ export class UITabbedItemComponent {
   }
 
   public Selected() {
+    this.Data.Selected = true;
     this.OnSelectedChange.emit(this.Data);
   }
 }
