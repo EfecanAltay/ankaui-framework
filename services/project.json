@@ -11,7 +11,7 @@
       "dependsOn": [
           {
             "target": "build",
-            "dependencies": true
+            "projects":["@ankaui-framework/data"]
           }
       ],
       "outputs": ["{workspaceRoot}/dist/{projectRoot}"],

@@ -1,15 +1,20 @@
 {
   "name": "@ankaui-framework/core",
-  "version": "1.0.2",
+  "version": "1.0.10",
   "license": "MIT",
   "scripts": {
     "start": "nx run ankaui-framework:serve",
     "storybook": "nx run ankaui-framework:storybook",
-    "build-storybook": "nx run ankaui-framework:build-storybook",
     "build": "nx run ankaui-framework:build:dev",
-    "build-components": "nx run ankaui-framework:components:build",
+    "build-data": "nx run @ankaui-framework/data:build",
+    "build-services": "nx run @ankaui-framework/services:build",
+    "build-components": "nx run @ankaui-framework/components:build",
+    "build-storybook": "nx run @ankaui-framework:build-storybook",
     "site": "nx run ankaui-framework:serve:development",
-    "create": "npx nx g @nx/angular:component login --directory libs/ankapi/login"
+    "create": "npx nx g @nx/angular:component login --directory libs/ankapi/login",
+    "pub-data": "cd \"dist/data\" & npm publish",
+    "pub-services": "cd \"dist/services\" & npm publish",
+    "pub-components": "cd \"dist/components\" & npm publish"
   },
   "dependencies": {
     "@angular/animations": "~18.0.0",

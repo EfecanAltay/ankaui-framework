@@ -64,7 +64,10 @@
       "inputs": ["production", "^production"]
     },
     "@ankaui-framework/data:build": {
-      "dependsOn": ["^build"]
+      "dependsOn": ["^build"],
+      "options": {
+        "main": "data/src/index.ts"
+      }
     }
   },
   "plugins": [
