@@ -13,9 +13,14 @@
     "lib": ["es2020", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
-    "baseUrl": ".",
+    "baseUrl": "./",
+    "types": ["jest", "node"],
     "paths": {
-      "@ankaui/framework": ["libs/framework/src/index.ts"]
+      "crypto": ["node_modules/crypto"],
+      "@ankaui-framework/data": ["data/src/index.ts"],
+      "@ankaui-framework/services": ["services/src/index.ts"],
+      "@ankaui-framework/middlewares": ["middlewares/src/index.ts"],
+      "@ankaui-framework/components": ["components/src/index.ts"],
     }
   },
   "exclude": ["node_modules", "tmp"]

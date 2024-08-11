@@ -2,7 +2,15 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "../../dist/out-tsc",
-    "types": []
+    "module": "commonjs",
+    "target": "es2016",
+    "useDefineForClassFields": false,
+    "types": ["jest", "node"],
+    "paths": {
+      "crypto": [
+        "node_modules/crypto"
+      ],
+    }
   },
   "files": ["src/main.ts"],
   "include": ["src/**/*.d.ts"],

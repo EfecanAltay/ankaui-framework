@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.lib.json",
+  "compilerOptions": {
+    "declarationMap": false,
+  },
+  "angularCompilerOptions": {
+    "compilationMode": "partial",
+  },
+  "exclude": [
+    "src/**/*.spec.ts",
+    "src/test-setup.ts",
+    "jest.config.ts",
+    "src/**/*.test.ts"
+  ]
+}

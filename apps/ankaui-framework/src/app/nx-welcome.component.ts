@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { UIButtonComponent } from "../components/ui-button/ui-button.component";
+import { UIButtonComponent } from "@ankaui-framework/components";
 
 @Component({
     selector: 'app-nx-welcome',
