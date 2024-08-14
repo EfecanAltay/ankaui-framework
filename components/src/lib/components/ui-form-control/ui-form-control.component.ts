@@ -8,15 +8,16 @@ import { UIBaseComponent } from '../ui-base/ui-base.component';
 import { UIButtonComponent } from '../ui-button/ui-button.component';
 import { UIInputBaseComponent } from '../ui-input-base/ui-input-base.component';
 import { UICheckboxComponent } from '../ui-checkbox/ui-checkbox.component';
+import { ToastyService } from 'services/src/lib/services/toast-service/toast-service';
 
 @Component({
-  selector: 'ui-form',
+  selector: 'ui-form-control',
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule, UITextInputComponent],
-  templateUrl: './form-control.component.html',
-  styleUrl: './form-control.component.css',
+  templateUrl: './ui-form-control.component.html',
+  styleUrl: './ui-form-control.component.css',
 })
-export class FormControlComponent implements AfterContentInit {
+export class UIFormControlComponent implements AfterContentInit {
 
   @ContentChildren(UITextInputComponent) textInputComponents?: QueryList<UIInputBaseComponent>;
   @ContentChildren(UICheckboxComponent) checkboxComponents?: QueryList<UIInputBaseComponent>;
