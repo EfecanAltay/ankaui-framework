@@ -16,11 +16,11 @@
     "baseUrl": "./",
     "types": ["jest", "node"],
     "paths": {
-      "crypto": ["node_modules/crypto"],
-      "@ankaui-framework/data": ["data/src/index.ts"],
-      "@ankaui-framework/services": ["services/src/index.ts"],
-      "@ankaui-framework/middlewares": ["middlewares/src/index.ts"],
       "@ankaui-framework/components": ["components/src/index.ts"],
+      "@ankaui-framework/data": ["data/src/index.ts"],
+      "@ankaui-framework/middlewares": ["middlewares/src/index.ts"],
+      "@ankaui-framework/services": ["services/src/index.ts"],
+      "crypto": ["node_modules/crypto"]
     }
   },
   "exclude": ["node_modules", "tmp"]

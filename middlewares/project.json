@@ -1,0 +1,46 @@
+{
+  "name": "@ankaui-framework/middlewares",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "middlewares/src",
+  "prefix": "lib",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:package",
+      "dependsOn": [
+        {
+          "target": "build",
+          "dependencies": true
+        }
+      ],
+      "outputs": [
+        "{workspaceRoot}/dist/{projectRoot}"
+      ],
+      "options": {
+        "project": "middlewares/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "middlewares/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "middlewares/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
+      "options": {
+        "jestConfig": "middlewares/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  }
+}

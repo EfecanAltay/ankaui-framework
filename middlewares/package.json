@@ -1,6 +1,6 @@
 {
-  "name": "@ankaui-framework/components",
-  "version": "0.0.2",
+  "name": "@ankaui-framework/middlewares",
+  "version": "0.0.1",
   "private": false,
   "peerDependencies": {
     "@angular/common": "^18.0.0",

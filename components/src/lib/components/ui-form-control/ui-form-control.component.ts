@@ -8,7 +8,8 @@ import { UIBaseComponent } from '../ui-base/ui-base.component';
 import { UIButtonComponent } from '../ui-button/ui-button.component';
 import { UIInputBaseComponent } from '../ui-input-base/ui-input-base.component';
 import { UICheckboxComponent } from '../ui-checkbox/ui-checkbox.component';
-import { ToastyService } from 'services/src/lib/services/toast-service/toast-service';
+import { ToastyService } from '@ankaui-framework/services';
+
 
 @Component({
   selector: 'ui-form-control',
